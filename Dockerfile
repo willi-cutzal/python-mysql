@@ -1,11 +1,9 @@
-FROM python:3.9.16-alpine3.16
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
 WORKDIR /home/app
 
 COPY . /home/app/
 
-RUN apk update
-RUN apk add py-pip
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 EXPOSE 8000
