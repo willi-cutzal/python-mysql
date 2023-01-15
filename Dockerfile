@@ -4,6 +4,8 @@ WORKDIR /home/app
 
 COPY . /home/app/
 
+RUN apk update
+RUN apk add py-pip
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 EXPOSE 8000
